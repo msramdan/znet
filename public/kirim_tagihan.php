@@ -17,7 +17,7 @@ if ($datanya['is_active'] == 'Yes') {
     while ($data = mysqli_fetch_array($query)) {
         try {
             $url = $datanya['url'] . 'send-message';
-            $message = 'Pelanggan SawitSkyLink Yth. ' . $data['nama'] . "\n\n";
+            $message = 'Pelanggan Znet Yth. ' . $data['nama'] . "\n\n";
             $message .= 'Kami sampaikan tagihan layanan internet bulan *' . tanggal_indonesia($data['periode'])  . '*' . "\n";
             $message .= 'Dengan no tagihan *' . $data['no_tagihan'] . '* sebesar *' . rupiah($data['total_bayar']) . '*' . "\n";
             $message .= 'Pembayaran paling lambat di tanggal *' . addHari($data['tanggal_create_tagihan'], $data['jatuh_tempo']) . '* Untuk Menghindari Isolir off wifi otomatis di tempat anda.' . " \n\n";
@@ -26,16 +26,17 @@ if ($datanya['is_active'] == 'Yes') {
             $message .= "1. Lewat Virtual Account (Verifikasi Pembayaran Automatis) \n";
             $message .= "2. Transfer lewat Norek dengan menyerahkan bukti transfer lewat WA / datang ke kantor \n";
             $message .= "3. Bayar Cash dengan datang ke kantor \n\n";
-            $message .= "Terima kasih atas kepercayaannya dalam memilih SawitSkyLink sebagai provider internet di tempat Anda. \n\n";
+            $message .= "Terima kasih atas kepercayaannya dalam memilih Znet sebagai provider internet di tempat Anda. \n\n";
             $message .= "Hormat kami,  \n";
-            $message .= "Admin SawitSkyLink \n";
+            $message .= "Admin Znet \n";
 
             if ($data['kirim_tagihan_wa'] == 'Yes') {
-                $data = array(
+                $dataPesan = array(
                     'api_key'  => $data['api_key_wa_gateway'],
-                    'sender'  => $data['sender'],
-                    'number' => $data['no_wa'],
-                    'message' => $message,
+                    'receiver' => $data['no_wa'],
+                    'data'     => [
+                        'message' => $message,
+                    ],
                 );
                 $body = json_encode($data);
                 $ch = curl_init($url);

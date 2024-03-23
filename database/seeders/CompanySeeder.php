@@ -26,7 +26,6 @@ class CompanySeeder extends Seeder
                 'favicon' => null,
                 'url_wa_gateway' => 'https://wa.evdigi.id/',
                 'api_key_wa_gateway' => 'r3w66teCN8dI52LFkfOcpgEVlrcnLC',
-                'sender' => '6283874731480',
                 'is_active' => 'No',
                 'footer_pesan_wa_tagihan' => 'Footer',
                 'footer_pesan_wa_pembayaran' => 'Terdepan membuka akses',
@@ -53,14 +52,8 @@ class CompanySeeder extends Seeder
                 'favicon' => null,
                 'url_wa_gateway' => 'https://wa.evdigi.id/',
                 'api_key_wa_gateway' => 'c851ba7398c8b2713cd424fccdd997be18b5da2b',
-                'sender' => '6283874731480',
                 'is_active' => 'No',
-                'footer_pesan_wa_tagihan' => 'silahkan kunjungi link di bawah ini untuk bayar tagihan dan cek tagihan. *https://sawit.rajabilling.my.id/*
-            pembayaran bisa di lakukan melalui, *indomaret*, *alfamart*, *virtual akun*,  melalui link tersebut tanpa perlu kirim bukti transfer.
-            jika ingin transfer manual bisa ke req di bawah ini, dengan mengirim bukti transfer ke admin.
-            *BRI* 173001008816500 (a/n= komang sutarini)
-            *BPD* 0140202752037 =(a/n ketut mistrawan)
-            *BCA* 8271337914 (a/n ketut mistrawan)',
+                'footer_pesan_wa_tagihan' => '',
                 'footer_pesan_wa_pembayaran' => 'Terdepan membuka akses',
                 'url_tripay' => '	https://tripay.co.id/api/',
                 'api_key_tripay' => 'MipM6kIhJ1FZYX1VvyIxYikZXVXJovNYxjo3l5tq',
