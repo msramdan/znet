@@ -73,7 +73,7 @@ class StatusrouterController extends Controller
             'publicrouter' => $ipcloud['0']['public-address'],
             'cpuname' => $resource['0']['cpu'],
             'cpucount' => $resource['0']['cpu-count'],
-            'frequency' => $resource['0']['cpu-frequency'],
+            'frequency' => isset($resource['0']['cpu-frequency']) ? $resource['0']['cpu-frequency'] : null,
             'cpuload' => $resource['0']['cpu-load'],
             'uptime' => $resource['0']['uptime'],
             'boardname' => $resource['0']['board-name'],
